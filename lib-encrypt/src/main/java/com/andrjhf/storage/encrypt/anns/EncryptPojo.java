@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * @author :  jiahongfei
  * @email : jiahongfeinew@163.com
  * @date : 2018/1/31
- * @desc :
+ * @desc : 如果JavaBean中是自定义的对象用这个注释进行标注，表示这个对象中有字段需要进行加密
  */
 @Retention(RetentionPolicy.RUNTIME) // 注解会在class字节码文件中存在，在运行时可以通过反射获取到
 @Target({ElementType.FIELD})//定义注解的作用目标**作用范围字段、枚举的常量

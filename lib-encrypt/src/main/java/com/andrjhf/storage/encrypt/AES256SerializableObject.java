@@ -26,17 +26,14 @@ import java.security.GeneralSecurityException;
 import static com.andrjhf.storage.encrypt.Constant.AES_KEY;
 
 /**
- * @author jiahongfei jiahongfeinew@163.com
- * @version V1.0.0
- * @Title: AES256SerializableObject.java
- * @Package com.android.support.framework.utils
- * @ClassName: AES256SerializableObject
- * @Description: 序列化对象, 保存对象到本地
- * @date Nov 5, 2014 2:23:28 PM
+ * @author :  jiahongfei
+ * @email : jiahongfeinew@163.com
+ * @date : 2018/1/25
+ * @desc : 用AES256对自定义的JavaBean中用注释EncryptString修饰的字段进行加密之后序列化到本地
  */
 public class AES256SerializableObject {
 
-    private static final String TAG = "SerializableObject";
+    private static final String TAG = "AES256SerObj";
 
     /**
      * 保存对象
@@ -205,7 +202,7 @@ public class AES256SerializableObject {
     // 用序列化与反序列化实现深克隆
     public static Object deepClone(Object src) {
         if (src instanceof Parcelable) {
-            Logger.e(TAG,"deepClone Parcelable");
+            Logger.e(TAG, "deepClone Parcelable");
             Parcel parcel = null;
             try {
                 parcel = Parcel.obtain();
@@ -217,7 +214,7 @@ public class AES256SerializableObject {
                 parcel.recycle();
             }
         } else if (src instanceof Serializable) {
-            Logger.e(TAG,"deepClone Serializable");
+            Logger.e(TAG, "deepClone Serializable");
             Object o = null;
             try {
                 if (src != null) {
