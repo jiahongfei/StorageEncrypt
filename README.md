@@ -11,14 +11,14 @@ GitHub地址：[请点击这里](https://github.com/jiahongfei/StorageEncrypt)
 
 
 ### AES加密简介
-** 高级加密标准 **（英语：**Advanced Encryption Standard**，缩写：**AES**），在[密码学](https://baike.baidu.com/item/%E5%AF%86%E7%A0%81%E5%AD%A6)中又称**Rijndael加密法**，是[美国联邦政府](https://baike.baidu.com/item/%E7%BE%8E%E5%9B%BD%E8%81%94%E9%82%A6%E6%94%BF%E5%BA%9C)采用的一种区块加密标准。这个标准用来替代原先的[DES](https://baike.baidu.com/item/DES)，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由[美国国家标准与技术研究院](https://baike.baidu.com/item/%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%E4%B8%8E%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%99%A2)（NIST）于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准。2006年，高级加密标准已然成为对称密钥加密中最流行的算法之一。
+高级加密标准（英语：Advanced Encryption Standard，缩写：**AES**），在[密码学](https://baike.baidu.com/item/%E5%AF%86%E7%A0%81%E5%AD%A6)中又称**Rijndael加密法**，是[美国联邦政府](https://baike.baidu.com/item/%E7%BE%8E%E5%9B%BD%E8%81%94%E9%82%A6%E6%94%BF%E5%BA%9C)采用的一种区块加密标准。这个标准用来替代原先的[DES](https://baike.baidu.com/item/DES)，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由[美国国家标准与技术研究院](https://baike.baidu.com/item/%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%E4%B8%8E%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%99%A2)（NIST）于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准。2006年，高级加密标准已然成为对称密钥加密中最流行的算法之一。
 AES分为AES128、AES192、AES256秘钥长度分别是128bit、192bit、256bit三种。
 本篇文章用的是计算量最大且最安全的AES256，AES256比128大概需要多花40%的时间，用于多出的4轮round key生成以及对应的SPN操作。另外，产生256-bit的密钥可能也需要比128位密钥多些开销，不过这部分开销应该可以忽略。
 
 > 这些概念性的东西我就不在这里复制粘贴了，想要了解的请自行Google把。
 下面我就介绍重头戏，我写的开源库**[StorageEncrypt](https://github.com/jiahongfei/StorageEncrypt)**。
 
-### **[StorageEncrypt](https://github.com/jiahongfei/StorageEncrypt)**简介
+### [StorageEncrypt](https://github.com/jiahongfei/StorageEncrypt)简介
 这个库主要的功能：
 1. 实现`SharedPreferences`接口对保存的`key`个`value`都进行`AES256`加密
 2. 序列化自定义的`JavaBean`将用注释`EncryptString`标注的字段进行`AES256`加密
